@@ -3,8 +3,13 @@ package main
 import (
 	"net/http"
 
+	"github.com/SohamGhugare/fampay-youtube-server/initializers"
 	"github.com/gin-gonic/gin"
 )
+
+func init() {
+	initializers.LoadEnv()
+}
 
 func main() {
 	// initializing gin server
