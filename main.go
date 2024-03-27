@@ -3,12 +3,17 @@ package main
 import (
 	"net/http"
 
+	"github.com/SohamGhugare/fampay-youtube-server/controllers"
 	"github.com/SohamGhugare/fampay-youtube-server/initializers"
 	"github.com/gin-gonic/gin"
 )
 
 func init() {
 	initializers.LoadEnv()
+}
+
+func setupRoutes(r *gin.Engine) {
+	r.GET("/api/v1/fetch", controllers.FetchVideos)
 }
 
 func main() {
@@ -21,6 +26,9 @@ func main() {
 			"message": "Pong!",
 		})
 	})
+
+	// setting up routes
+	setupRoutes(r)
 
 	// running the server
 	r.Run()
