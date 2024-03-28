@@ -8,6 +8,13 @@ import (
 )
 
 func LoadEnv() {
+
+	_, exists := os.LookupEnv("API_KEY")
+	if exists {
+		log.Println("API_KEY is already set...")
+		return
+	}
+
 	// loading the .env file
 	err := godotenv.Load()
 	if err != nil {
