@@ -1,9 +1,6 @@
 package models
 
-import "gorm.io/gorm"
-
 type Video struct {
-	gorm.Model
 	ID           string `json:"id"`
 	Title        string `json:"title"`
 	Description  string `json:"description"`
