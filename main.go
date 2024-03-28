@@ -19,6 +19,10 @@ func setupRoutes(r *gin.Engine) {
 }
 
 func main() {
+
+	// running the loop in async
+	go database.Loop()
+
 	// initializing gin server
 	r := gin.Default()
 
