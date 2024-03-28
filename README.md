@@ -6,7 +6,8 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 
 ### Tech Stack Used
 
-- Gin Gonic (Golang)
+- Gin Gonic (Golang): API
+- Gorm (Golang): ORM (for database operations)
 - YouTube v3 API
 
 ### Running the server
