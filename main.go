@@ -4,12 +4,14 @@ import (
 	"net/http"
 
 	"github.com/SohamGhugare/fampay-youtube-server/controllers"
+	"github.com/SohamGhugare/fampay-youtube-server/database"
 	"github.com/SohamGhugare/fampay-youtube-server/initializers"
 	"github.com/gin-gonic/gin"
 )
 
 func init() {
 	initializers.LoadEnv()
+	database.SetupDatabaseClient()
 }
 
 func setupRoutes(r *gin.Engine) {
